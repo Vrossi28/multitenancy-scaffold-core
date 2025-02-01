@@ -1,0 +1,39 @@
+version: "3"
+services:
+  vrossi.scaffoldcore.webapi:
+    build:
+      context: .
+      dockerfile: Vrossi.ScaffoldCore.WebApi/Dockerfile
+    ports:
+      - "8080:8080"
+      - "1443:1443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080;https://+:1443
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - ConnectionStrings__DefaultConnection=Server=vrossi.scaffoldcore.db;Port=5432;Database=VrossiScaffoldDB;User Id=postgres;Password=postgres
+      - EmailService__SenderEmail=youremail@domain.com
+      - EmailService__SenderPassword=Password
+      - Jwt__SecretKey=SecretKey
+      - Hangfire__Password=Password
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    depends_on:
+      - vrossi.scaffoldcore.db
+  vrossi.scaffoldcore.db:
+    build:
+      context: .
+      dockerfile: Vrossi.ScaffoldCore.Infrastructure/Config/Dockerfile
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: VrossiScaffoldDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+volumes:
+  postgres_data:

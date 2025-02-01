@@ -1,0 +1,31 @@
+name: Scaffold Core CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up .NET 6.0
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "6.0"
+
+      - name: Restore dependencies
+        run: dotnet restore src/Vrossi.ScaffoldCore.sln
+
+      - name: Build the solution
+        run: dotnet build src/Vrossi.ScaffoldCore.sln --configuration Release
+
+      - name: Run tests
+        run: dotnet test src/Vrossi.ScaffoldCore.UnitTest/Vrossi.ScaffoldCore.UnitTest.csproj --configuration Release --no-build
