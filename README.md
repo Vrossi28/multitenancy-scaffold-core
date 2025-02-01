@@ -1,13 +1,16 @@
-﻿# Multitenancy ScaffoldCore - A Boilerplate for Multi-Tenant Applications
+﻿﻿# Multitenancy ScaffoldCore - A Boilerplate for Multi-Tenant Applications
 
 [![Build and Tests](https://github.com/Vrossi28/multitenancy-scaffold-core/actions/workflows/workflow.yaml/badge.svg)](https://github.com/Vrossi28/multitenancy-scaffold-core/actions/workflows/workflow.yaml)
 
-1. [Introduction](#introduction)
+## Introduction
 
-   - Overview of the project
-   - Key Features and Functionalities
+ScaffoldCore is a **.NET 6.0 Web API** boilerplate designed to accelerate the development of new projects by providing a solid foundation with essential functionalities. It includes built-in **multi-tenancy support**, **account management**, **email sending**, and **asynchronous job processing using Hangfire**.
 
-2. [Features](#features)
+This project is containerized with **Docker**, utilizes **PostgreSQL** as the database, follows **CQRS architecture with MediatR**, and supports **Entity Framework Core's Code-First Migrations**.
+
+---
+
+1. [Features](#features)
 
    - Multi-Tenancy
    - Tenant Management
@@ -16,7 +19,7 @@
    - Asynchronous Job Processing (Hangfire)
    - Database Migrations (EF Core)
 
-3. [Technologies Used](#technologies-used)
+2. [Technologies Used](#technologies-used)
 
    - .NET Core 6.0
    - Hangfire
@@ -28,7 +31,7 @@
    - Swagger
    - AutoMapper
 
-4. [Getting Started](#getting-started)
+3. [Getting Started](#getting-started)
 
    - Prerequisites
      - .NET 6 SDK
@@ -39,7 +42,7 @@
      - Running Locally
    - Accessing API Documentation
 
-5. [Docker Compose Overview](#docker-compose-overview)
+4. [Docker Compose Overview](#docker-compose-overview)
 
    - `docker-compose.yml` Explanation
    - Environment Variables
@@ -50,35 +53,29 @@
      - Jwt\_\_SecretKey
      - Hangfire\_\_Password
 
-6. [Generating a Development Certificate](#generating-a-development-certificate)
+5. [Generating a Development Certificate](#generating-a-development-certificate)
 
    - Creating a Self-Signed Certificate
    - Exporting the Certificate
    - Docker Configuration for HTTPS
 
-7. [Contributing](#contributing)
+6. [Contributing](#contributing)
 
    - How to Contribute
    - Changes in the Database (Code-First Approach)
      - Creating a Migration
      - Updating the Database
 
-8. [Contributors](#contributors)
+7. [Contributors](#contributors)
 
    - List of Contributors
 
-9. [License](#license)
-   - MIT License
+8. [License](#license)
+   - Apache-2.0 license
 
 ---
 
-## Introduction
-
-ScaffoldCore is a **.NET 6.0 Web API** boilerplate designed to accelerate the development of new projects by providing a solid foundation with essential functionalities. It includes built-in **multi-tenancy support**, **account management**, **email sending**, and **asynchronous job processing using Hangfire**.
-
-This project is containerized with **Docker**, utilizes **PostgreSQL** as the database, follows **CQRS architecture with MediatR**, and supports **Entity Framework Core's Code-First Migrations**.
-
-## ✨ Features
+## Features
 
 - **Multi-Tenancy**: Ensures all data is isolated by tenant.
 - **Tenant Management**: Create and manage tenants dynamically.
@@ -89,7 +86,7 @@ This project is containerized with **Docker**, utilizes **PostgreSQL** as the da
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **.NET Core 6.0** – Backend framework.
 - **Hangfire** – Background job processing.
@@ -104,7 +101,7 @@ This project is containerized with **Docker**, utilizes **PostgreSQL** as the da
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -141,7 +138,7 @@ Make sure you have the following installed:
 
 ---
 
-## 🐳 Docker Compose Overview
+## Docker Compose Overview
 
 Here is the `docker-compose.yml` file used in this project:
 
@@ -189,7 +186,7 @@ volumes:
   postgres_data:
 ```
 
-### 📌 Environment Variables
+### Environment Variables
 
 | Variable                                              | Description                                                             |
 | ----------------------------------------------------- | ----------------------------------------------------------------------- |
@@ -205,7 +202,7 @@ volumes:
 
 ---
 
-## 🔐 Generating a Development Certificate
+## Generating a Development Certificate
 
 To enable HTTPS in development, you need to generate a **self-signed certificate**.
 
@@ -256,7 +253,7 @@ docker-compose up --build
 
 ---
 
-## 📌 Contributing
+## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
@@ -303,6 +300,6 @@ $ dotnet ef database update --project Vrossi.ScaffoldCore.Infrastructure --start
 
 ---
 
-## 📜 License
+## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache-2.0 license](LICENSE).
