@@ -73,8 +73,6 @@ This project is containerized with **Docker**, utilizes **PostgreSQL** as the da
 8. [License](#license)
    - Apache-2.0 license
 
----
-
 ## Features
 
 - **Multi-Tenancy**: Ensures all data is isolated by tenant.
@@ -83,8 +81,6 @@ This project is containerized with **Docker**, utilizes **PostgreSQL** as the da
 - **Email Sending**: Includes an example of sending contact request emails.
 - **Asynchronous Job Processing**: Integrated with **Hangfire** for background jobs.
 - **Database Migrations**: Uses **EF Core** for database schema management.
-
----
 
 ## Technologies Used
 
@@ -98,8 +94,6 @@ This project is containerized with **Docker**, utilizes **PostgreSQL** as the da
 - **Entity Framework Core** – ORM for database access, using Code-First migrations.
 - **Swagger** – API documentation.
 - **AutoMapper** – DTO mapping.
-
----
 
 ## Getting Started
 
@@ -116,27 +110,28 @@ Make sure you have the following installed:
 
    ```bash
    git clone https://github.com/Vrossi28/multitenancy-scaffold-core.git
-   cd scaffoldcore
+   cd multitenancy-scaffold-core
    ```
 
 2. Build and run the application
-   2.1 Using Docker
 
-   ```bash
-   docker-compose up --build
-   ```
+   1. Using Docker
 
-   This will start both the **Web API** and **PostgreSQL** containers.
-   2.2 Local development - Make sure to update the connection strings to map to your local Postgres database. - After configuring the connection to the database you can run the project using the command:
-   `bash
-    $ dotnet run --configuration debug
-`
+      - The following command will start both the **Web API** and **PostgreSQL** containers:
+
+      ```bash
+      docker-compose up --build
+      ```
+
+   2. Local development - Make sure to update the connection strings to map to your local Postgres database.
+      - After configuring the connection to the database you can run the project using the command:
+      ```bash
+        $ dotnet run --configuration debug
+      ```
 
 3. Access the API documentation:
 
    - Open [http://localhost:8080/swagger](http://localhost:8080/swagger) in your browser.
-
----
 
 ## Docker Compose Overview
 
@@ -200,8 +195,6 @@ volumes:
 | `Jwt__SecretKey`                                      | Secret key for JWT authentication.                                      |
 | `Hangfire__Password`                                  | Password for Hangfire dashboard authentication.                         |
 
----
-
 ## Generating a Development Certificate
 
 To enable HTTPS in development, you need to generate a **self-signed certificate**.
@@ -251,8 +244,6 @@ docker-compose down
 docker-compose up --build
 ```
 
----
-
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
@@ -277,8 +268,6 @@ After create the migration, update your database using the command:
 $ dotnet ef database update --project Vrossi.ScaffoldCore.Infrastructure --startup-project Vrossi.ScaffoldCore.WebApi --verbose
 ```
 
----
-
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -297,8 +286,6 @@ $ dotnet ef database update --project Vrossi.ScaffoldCore.Infrastructure --start
         </tr>
     </tbody>
 </table>
-
----
 
 ## License
 
