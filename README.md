@@ -1,6 +1,6 @@
 ﻿# Multitenancy ScaffoldCore - A Boilerplate for Multi-Tenant Applications
 
-[![Build and Tests](https://github.com/Vrossi28/multitenancy-scaffold-core/actions/workflows/workflow.yml/badge.svg)](https://github.com/Vrossi28/multitenancy-scaffold-core/actions/workflows/workflow.yml)
+[![Build and Tests](https://github.com/Vrossi28/multitenancy-scaffold-core/actions/workflows/workflow.yaml/badge.svg)](https://github.com/Vrossi28/multitenancy-scaffold-core/actions/workflows/workflow.yaml)
 
 1. [Introduction](#introduction)
 
