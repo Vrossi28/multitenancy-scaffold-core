@@ -71,7 +71,7 @@ This project is containerized with **Docker**, utilizes **PostgreSQL** as the da
    - List of Contributors
 
 8. [License](#license)
-   - Apache-2.0 license
+   - MIT license
 
 ## Features
 
@@ -289,4 +289,4 @@ $ dotnet ef database update --project Vrossi.ScaffoldCore.Infrastructure --start
 
 ## License
 
-This project is licensed under the [Apache-2.0 license](LICENSE).
+This project is licensed under the [MIT](LICENSE).
