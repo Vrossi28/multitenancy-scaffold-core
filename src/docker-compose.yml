@@ -15,7 +15,7 @@ services:
       - ConnectionStrings__DefaultConnection=Server=vrossi.scaffoldcore.db;Port=5432;Database=VrossiScaffoldDB;User Id=postgres;Password=postgres
       - EmailService__SenderEmail=youremail@domain.com
       - EmailService__SenderPassword=Password
-      - Jwt__SecretKey=SecretKey
+      - Jwt__SecretKey=EsMmLRT3zzFMCHmhFAblTaGK4HzHHD0q
       - Hangfire__Password=Password
     volumes:
       - ~/.aspnet/https:/https:ro
