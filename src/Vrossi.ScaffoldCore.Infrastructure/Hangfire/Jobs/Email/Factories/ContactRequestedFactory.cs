@@ -25,19 +25,19 @@ namespace Vrossi.ScaffoldCore.Infrastructure.Hangfire.Jobs.Email.Factories
             var message = request.Attributes.GetValueOrDefault(EmailConstants.Message);
             var phone = request.Attributes.GetValueOrDefault(EmailConstants.Phone);
 
-            var content = $"O usuário <strong>{name}</strong>, de email <strong>{email}</strong>, está solicitando contato.";
+            var content = $"The user <strong>{name}</strong>, owning e-mail <strong>{email}</strong>, is requesting contact.";
             if(!string.IsNullOrWhiteSpace(email))
             { 
-                content += $"<br/>Com a seguinte mensagem: <strong>{message}</strong>";
+                content += $"<br/>With the following message: <strong>{message}</strong>";
             }
 
-            var additionalMessage = "Por favor entre em contato.";
+            var additionalMessage = "Please get in touch.";
             if (!string.IsNullOrWhiteSpace(phone))
             {
-                additionalMessage += $"<br/>Telefone: <strong>{phone}</strong>";
+                additionalMessage += $"<br/>Phone number: <strong>{phone}</strong>";
             }
 
-            return await _emailBuilder.Create("Contato Solicitado", request.Recipients)
+            return await _emailBuilder.Create("Contact Requested", request.Recipients)
                                 .WithTemplateWithoutButton(content, additionalMessage)
                                 .Send();
         }

@@ -12,7 +12,7 @@ namespace Vrossi.ScaffoldCore.Infrastructure.Hangfire.Jobs.Email.Factories
     {
         private readonly IEmailBuilder _emailBuilder;
 
-        private const string CONTACT_RECEIVED_MESSAGE = "Olá! Muito obrigado por seu contato, em breve um de nossos especialistas irá entrar em contato com você.";
+        private const string CONTACT_RECEIVED_MESSAGE = "Hello! Thank you very much for requesting our contact, very soon one of our specialists with get in touch with you.";
 
         public WelcomeFactory(IEmailBuilder emailBuilder)
         {
@@ -23,8 +23,8 @@ namespace Vrossi.ScaffoldCore.Infrastructure.Hangfire.Jobs.Email.Factories
         public override string Name => nameof(WelcomeFactory);
         public override async Task<object> Send(EmailModelRequest request)
         {
-            var additionalMessage = "Por enquanto, você pode verificar nosso blog de conteúdos em https://mosaic-ai.io/blog";
-            return await _emailBuilder.Create("Bem-vindo a mosaic.ai", request.Recipients)
+            var additionalMessage = "In the meantime, you can follow me at https://github.com/vrossi28";
+            return await _emailBuilder.Create("Welcome to Vrossi28", request.Recipients)
                                 .WithTemplateWithoutButton(CONTACT_RECEIVED_MESSAGE, additionalMessage)
                                 .Send();
         }
